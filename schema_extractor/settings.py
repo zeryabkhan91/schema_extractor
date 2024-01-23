@@ -1,3 +1,4 @@
+
 """
 Django settings for schema_extractor project.
 
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-1-$=htuuljkj&%yniz-d^9z!pi-$(v!i!3x(7-g6*=@6sk%7bq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -37,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'schema_api',
 ]
 
 MIDDLEWARE = [
+    'schema_api.middleware.DatabaseCredentialsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,10 +77,7 @@ WSGI_APPLICATION = 'schema_extractor.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': {}
 }
 
 
