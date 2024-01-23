@@ -8,45 +8,57 @@ A Python-based REST API for database schema extraction using Django and PostgreS
 
 ## Usage
 
-### Credentials Endpoint
+### Storing Credentials
 
-Use this endpoint to provide database credentials.
+Use this endpoint to provide database credentials.*
 
-```code
-curl -X POST -H "Content-Type: application/json" -d '{"host": "your-host", "username": "your-username", "password": "your-password", "database": "your-database"}' http://localhost:8000/api/v1/credentials/
+**REST Endpoint:**
+```http
+POST http://localhost:8000/api/v1/credentials/
 ```
 
-Schema Endpoint
+### Fetching Schema of Tables
+
+**REST Endpoint**
 This endpoint retrieves database schema information.
 
-```Code
-curl http://localhost:8000/api/v1/schema/
+```http
+GET http://localhost:8000/api/v1/schema/
 ```
+ 
+### Get Detail of a Table
 
-Search Table Endpoint
+**Search Table Endpoint**
 This endpoint searches for a specific table within the database.
 
-```Code
-curl http://localhost:8000/api/v1/search/your-table-name/
+```http
+GET http://localhost:8000/api/v1/search/your-table-name/
 ```
+
 
 ### Docker Deployment
 The services can be containerized using Docker. Use the following commands for local deployment:
 
-Build and start the containers:
+- Build and start the containers:
 
 ```Code
 docker-compose up -d --build
 ```
 
-Stop the containers:
+- To Stop the containers:
 
 ```Code
 docker-compose down
 ```
 
-View logs:
+- To View logs:
 
 ```Code
 docker-compose logs
 ```
+
+## Video Explanation
+
+Watch a detailed explanation of the project, including the code walkthrough, system diagram, data model, and challenges/solutions in the following video:
+
+[Link to Video Explanation](https://www.loom.com/share/4c2cd7faa4764e2890e299a814090b04?sid=2c46c06c-260c-462b-83ec-4aaae236fbcd)
