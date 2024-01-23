@@ -1,2 +1,3 @@
 # schema_extractor
-A Django based test task for extracting database schema info
+A Python-based REST API for database schema extraction using Django and PostgreSQL.
+
